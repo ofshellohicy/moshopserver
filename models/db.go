@@ -1,6 +1,9 @@
 package models
 
 import (
+	"fmt"
+	"net/url"
+
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -432,8 +435,19 @@ type NideshopUserLevel struct {
 
 func init() {
 
+	mysqlMasterURL := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=utf8mb4&loc=%v",
+		"eye",
+		"sauron",
+		"localhost",
+		"3306",
+		"nideshop",
+		url.QueryEscape("Asia/Shanghai"))
+
+	fmt.Println("DB link", mysqlMasterURL)
+
 	// set default database
-	orm.RegisterDataBase("default", "mysql", "root:123@tcp(127.0.0.1:3306)/nideshop?charset=utf8mb4", 30)
+	// orm.RegisterDataBase("default", "mysql", "eye:sauron@tcp(127.0.0.1:3306)/nideshop?charset=utf8mb4", 30)
+	orm.RegisterDataBase("default", "mysql", mysqlMasterURL)
 
 	// register model
 	orm.RegisterModel(new(NideshopAd))
