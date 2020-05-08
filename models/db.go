@@ -8,6 +8,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+// NideshopAd 广告
 type NideshopAd struct {
 	AdPositionId int    `json:"ad_position_id"`
 	Content      string `json:"content"`
@@ -20,6 +21,7 @@ type NideshopAd struct {
 	Name         string `json:"name"`
 }
 
+// NideshopAdPosition 广告位置
 type NideshopAdPosition struct {
 	Desc   string `json:"desc"`
 	Height int    `json:"height"`
@@ -28,6 +30,7 @@ type NideshopAdPosition struct {
 	Width  int    `json:"width"`
 }
 
+// NideshopAddress 收货地址
 type NideshopAddress struct {
 	Address    string `json:"address"`
 	CityId     int    `json:"city_id"`
@@ -41,6 +44,7 @@ type NideshopAddress struct {
 	UserId     int    `json:"user_id"`
 }
 
+// NideshopAdmin 管理员
 type NideshopAdmin struct {
 	AddTime       int    `json:"add_time"`
 	AdminRoleId   int    `json:"admin_role_id"`
@@ -54,6 +58,7 @@ type NideshopAdmin struct {
 	Username      string `json:"username"`
 }
 
+// NideshopAttribute  商品属性，尺寸，口味等等
 type NideshopAttribute struct {
 	AttributeCategoryId int    `json:"attribute_category_id"`
 	Id                  int    `json:"id"`
@@ -63,12 +68,14 @@ type NideshopAttribute struct {
 	Values              string `json:"values"`
 }
 
+// NideshopAttributeCategory 属性类别，例如 家具、宠物
 type NideshopAttributeCategory struct {
 	Enabled int    `json:"enabled"`
 	Id      int    `json:"id"`
 	Name    string `json:"name"`
 }
 
+// NideshopBrand 品牌
 type NideshopBrand struct {
 	AppListPicUrl string `json:"app_list_pic_url"`
 	FloorPrice    string `json:"floor_price"`
@@ -84,6 +91,7 @@ type NideshopBrand struct {
 	SortOrder     int    `json:"sort_order"`
 }
 
+// NideshopCart 购物车
 type NideshopCart struct {
 	Checked                   int     `json:"checked"`
 	GoodsId                   int     `json:"goods_id"`
@@ -101,6 +109,7 @@ type NideshopCart struct {
 	UserId                    int     `json:"user_id"`
 }
 
+// NideshopCategory 大分类 餐厨、饮食、居家等等
 type NideshopCategory struct {
 	BannerUrl    string `json:"banner_url"`
 	FrontDesc    string `json:"front_desc"`
@@ -119,6 +128,7 @@ type NideshopCategory struct {
 	WapBannerUrl string `json:"wap_banner_url"`
 }
 
+// NideshopChannel 频道，居家、餐厨
 type NideshopChannel struct {
 	IconUrl   string `json:"icon_url"`
 	Id        int    `json:"id"`
@@ -127,6 +137,7 @@ type NideshopChannel struct {
 	Url       string `json:"url"`
 }
 
+// NideshopCollect 收藏
 type NideshopCollect struct {
 	AddTime     int64 `json:"add_time"`
 	Id          int   `json:"id"`
@@ -136,6 +147,7 @@ type NideshopCollect struct {
 	ValueId     int   `json:"value_id"`
 }
 
+// NideshopComment 评论
 type NideshopComment struct {
 	AddTime    int64  `json:"add_time"`
 	Content    string `json:"content"`
@@ -147,6 +159,7 @@ type NideshopComment struct {
 	ValueId    int    `json:"value_id"`
 }
 
+// NideshopCommentPicture 评论图片
 type NideshopCommentPicture struct {
 	CommentId int    `json:"comment_id"`
 	Id        int    `json:"id"`
@@ -154,6 +167,7 @@ type NideshopCommentPicture struct {
 	SortOrder int    `json:"sort_order"`
 }
 
+// NideshopCoupon 优惠券
 type NideshopCoupon struct {
 	Id             int    `json:"id"`
 	MaxAmount      string `json:"max_amount"`
@@ -168,6 +182,7 @@ type NideshopCoupon struct {
 	UseStartDate   int    `json:"use_start_date"`
 }
 
+// NideshopFeedback 用户反馈
 type NideshopFeedback struct {
 	MessageImg string `json:"message_img"`
 	MsgArea    int    `json:"msg_area"`
@@ -184,6 +199,7 @@ type NideshopFeedback struct {
 	UserName   string `json:"user_name"`
 }
 
+// NideshopFootprint 足迹，用户浏览记录
 type NideshopFootprint struct {
 	AddTime int64 `json:"add_time"`
 	GoodsId int   `json:"goods_id"`
@@ -191,6 +207,7 @@ type NideshopFootprint struct {
 	UserId  int   `json:"user_id"`
 }
 
+// NideshopGoods 商品
 type NideshopGoods struct {
 	AddTime           int    `json:"add_time"`
 	AppExclusivePrice string `json:"app_exclusive_price"`
@@ -224,6 +241,7 @@ type NideshopGoods struct {
 	UnitPrice         string `json:"unit_price"`
 }
 
+// NideshopGoodsAttribute 商品属性
 type NideshopGoodsAttribute struct {
 	AttributeId int    `json:"attribute_id"`
 	GoodsId     int    `json:"goods_id"`
@@ -231,6 +249,7 @@ type NideshopGoodsAttribute struct {
 	Value       string `json:"value"`
 }
 
+// NideshopGoodsGallery 商品画册
 type NideshopGoodsGallery struct {
 	GoodsId   int    `json:"goods_id"`
 	Id        int    `json:"id"`
@@ -239,6 +258,7 @@ type NideshopGoodsGallery struct {
 	SortOrder int    `json:"sort_order"`
 }
 
+// NideshopGoodsIssue 商品常见问题
 type NideshopGoodsIssue struct {
 	Answer   string `json:"answer"`
 	GoodsId  string `json:"goods_id"`
@@ -246,6 +266,7 @@ type NideshopGoodsIssue struct {
 	Question string `json:"question"`
 }
 
+// NideshopSpecification 说明
 type NideshopGoodsSpecification struct {
 	GoodsId         int    `json:"goods_id"`
 	Id              int    `json:"id"`
@@ -254,6 +275,7 @@ type NideshopGoodsSpecification struct {
 	Value           string `json:"value"`
 }
 
+// NideshopKeywords 关键词
 type NideshopKeywords struct {
 	Id        int    `json:"id"`
 	IsDefault int    `json:"is_default"`
@@ -265,6 +287,7 @@ type NideshopKeywords struct {
 	Type      int    `json:"type"`
 }
 
+// NideshopOrder 订单
 type NideshopOrder struct {
 	ActualPrice    float64 `json:"actual_price"`
 	AddTime        int64   `json:"add_time"`
@@ -298,6 +321,7 @@ type NideshopOrder struct {
 	UserId         int     `json:"user_id"`
 }
 
+// NideshopOrderExpress 订单的快递单
 type NideshopOrderExpress struct {
 	AddTime      int    `json:"add_time"`
 	Id           int    `json:"id"`
@@ -313,6 +337,7 @@ type NideshopOrderExpress struct {
 	UpdateTime   int    `json:"update_time"`
 }
 
+// NideshopOrderGoods 订单中的商品
 type NideshopOrderGoods struct {
 	GoodsId                   int     `json:"goods_id"`
 	GoodsName                 string  `json:"goods_name"`
@@ -329,6 +354,7 @@ type NideshopOrderGoods struct {
 	RetailPrice               float64 `json:"retail_price"`
 }
 
+// NideshopProduct 商品
 type NideshopProduct struct {
 	GoodsId               int     `json:"goods_id"`
 	GoodsNumber           int     `json:"goods_number"`
@@ -338,6 +364,7 @@ type NideshopProduct struct {
 	RetailPrice           float64 `json:"retail_price"`
 }
 
+// NideshopRegion 区域？
 type NideshopRegion struct {
 	AgencyId int    `json:"agency_id"`
 	Id       int    `json:"id"`
@@ -352,6 +379,7 @@ type NideshopRelatedGoods struct {
 	RelatedGoodsId int `json:"related_goods_id"`
 }
 
+// NideshopSearchHistory 用户搜索记录
 type NideshopSearchHistory struct {
 	AddTime int64  `json:"add_time"`
 	From    string `json:"from"`
@@ -360,6 +388,7 @@ type NideshopSearchHistory struct {
 	UserId  string `json:"user_id"`
 }
 
+// NideshopShipper 快递
 type NideshopShipper struct {
 	Code      string `json:"code"`
 	Id        int    `json:"id"`
